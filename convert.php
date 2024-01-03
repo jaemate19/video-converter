@@ -1,6 +1,6 @@
 <?php
 
-$allowed_extentions = array('mp4') ;                 //an array of allowed extensions of the uploaded files,so far it's just mp4..
+$allowed_extentions = array('mp4') ;                 //an array of allowed extensions of the uploaded files
 $max_file_size = 10000000;                           //this is the maximum allowable size of the uploaded mp4 file, 1000000 = 10MB
 
 if(isset($_POST['submit']))                          //check if the submit button has been clicked(ie, has the form been submitted?)
@@ -26,8 +26,8 @@ if(isset($_POST['submit']))                          //check if the submit butto
 
                move_uploaded_file($file_tmp, $target_file);  //move the uploaded file from the temporary directory to the operation directory
       
-               $output = shell_exec("cd $target_dir; ffmpeg -i *.mp4 output.mp3; ls *.mp3"); //the ls command returns the name of the mp3 file 
-               $url = "$target_dir/${output}";  //this is the final url of the file that is going to be available for download
+               $output = shell_exec("cd $target_dir; ../../convert.sh; ls *.mp3 ");  //run the conversion script
+               $url = "$target_dir/${output}";        //this is the final url of the file that is going to be available for download
                echo "<a href='$url' Download=''>Get Your File</a>";  //finally present a download link to the client
             }
             else
