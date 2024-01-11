@@ -20,15 +20,16 @@ if(isset($_POST['submit']))                          //check if the submit butto
             if($file_size <= $max_file_size) // 10000000 bytes = 10MB
             {
                $random_dir_name = uniqid();  //generate a random number that will be used to name a directory
-               mkdir("uploads/${random_dir_name}");   //this is the randomly named directory that will house the current operation
+               mkdir("uploads/${random_dir_name}"); 
                $target_dir = ("uploads/${random_dir_name}");
                $target_file = ("$target_dir/${file_name}");
 
                move_uploaded_file($file_tmp, $target_file);  //move the uploaded file from the temporary directory to the operation directory
       
-               $output = shell_exec("cd $target_dir; ../../convert.sh; ls *.mp3 ");  //run the conversion script
-               $url = "$target_dir/${output}";        //this is the final url of the file that is going to be available for download
-               echo "<a href='$url' Download=''>Get Your File</a>";  //finally present a download link to the client
+               $output = shell_exec("cd $target_dir; ../../convert.sh; ls *.mp3 ");
+               $url = "$target_dir/${output}";
+               echo '<h2 style="color: green;">Success!! Your file is ready for download!</h2>';
+               echo "<a href='$url' Download=''>Download it!</a>";
             }
             else
             {
