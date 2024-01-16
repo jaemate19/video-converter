@@ -46,13 +46,9 @@ h3
 {
     margin-bottom: 20px;
     font-weight: 600;
+    color: green;
 }
 
-.drag-area .icon
-{
-    font-size: 50px;
-    color: #1683ff;
-}
 
 .drag-area .header
 {
@@ -60,6 +56,70 @@ h3
     font-weight: 500;
     color: #34495e;
 }
+
+button
+{
+    background-color: red;
+}
+
+input[type="file"]
+{
+    width: 450px;
+    height: 90px;
+    max-width: 100%;
+    color: #444;
+    padding: 5px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #555;
+}
+
+input[type=file]::file-selector-button
+{
+    margin: 20px;
+    border: none;
+    background: #084cdf;
+    padding: 10px 20px;
+    border-radius: 9px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
+input[type="submit"]
+{
+    width: 220px;
+    height: 120px;
+    max-width: 100%;
+    color: black;
+    cursor: pointer;
+    background: lightgreen;
+    border-radius: 10px;
+    border: 1px solid #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
