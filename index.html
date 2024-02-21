@@ -4,25 +4,27 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Video-Converter</title>
-
+        <link rel="shortcut icon" href="#" />
+        <title>Video Converter</title>
         <link rel="stylesheet" href="styles.css" />        
     </head>
-
     <body>
         <div class="container">
-            <h3>Upload your file</h3>
-            <div class="drag-area">
-                <span class="header"> Select an MP4 file to convert</span><br>
-                <span class="header"> Maximum file size: 10MB</span> <br><br>
-                    <form action="convert.php" method="post" enctype="multipart/form-data">
-                        <input type="file" name="upload"/><br><br>
-                        <input type="submit" value="Convert" name="submit">
-                    </form>
+            <h2>Convert your MP4 file to MP3: Max File Size=10MB</h2>
+            <div class="drag-area" ondrop="drop_file(event)">
+                <span class="header"> Drag & Drop to upload</span> 
+
+                <h2 id="or_header"> OR </h2>
+                
+                <span class="visible_button" id="visible_button">Select File</span>
+
+                <a id="download" download='' hidden> Download your file</a>
+                
+                <input type="file" name="file"  id="selectfile" onchange="file_explorer();" hidden /><br><br>
+                <button class="submit_button" id="submit_button" onclick="pre_ajax_upload()" hidden>Convert</button>
+                <div class="loader" id="loader" hidden> </div>
             </div>
         </div>
-
-        <script src="script.js"></script>
-    
+        <script src="script.js"></script>   
     </body>
 </html>
