@@ -35,6 +35,14 @@ body
     border: 2px solid #1683ff;
 }
 
+#file_label
+{
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    background-color: blue;  
+}
+
 h2
 {
     margin-bottom: 20px;
@@ -44,7 +52,7 @@ h2
 
 .drag-area .header
 {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
     color: #34495e;
 }

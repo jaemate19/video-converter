@@ -73,7 +73,10 @@ function file_explorer()
 //This is called after either a file is dropped or file selected in the file browser. It unhides the submit button
 function pre_convert_page()
 {
-	dragText.textContent = '';
+	dragText.style.display = 'none';
+	var label = document.getElementById('file_label');
+	label.textContent = fileobj.name;
+	label.style.display = "inline";
     document.getElementById("submit_button").style.display = "inline";  
 }
 
@@ -126,6 +129,7 @@ function ajax_upload()
 //After the backend operation is done,this page will be presented to the user to download the converted file
 function download_page(download_link)
 {
+	document.getElementById("file_label").style.display = "none";
 	document.getElementById("loader").style.display = "none";
 	dragText.style.display = "none";
 	document.getElementById("or_header").style.display = "none";
