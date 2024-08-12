@@ -1,4 +1,6 @@
 
+//This is the backend PHP that will handle the take care of the uploaded file
+//We basically set some parameters such as file name and file size
 <?php
 
 $file_name = $_FILES['upload']['name'];
