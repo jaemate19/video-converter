@@ -1,4 +1,5 @@
 
+
 const dragArea = document.querySelector('.drag-area');
 const dragText = document.querySelector('.header');
 let visible_button = document.querySelector('.visible_button');
