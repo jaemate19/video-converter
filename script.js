@@ -11,14 +11,14 @@ visible_button.onclick = () => {
 	selectfile.click();
 };
 
-//when file is dragged inside the drag area,the area should change accordingly as described in the change_content() function
+//when file is dragged inside the drag area
 dragArea.addEventListener('dragover', (event) => {
 	event.preventDefault();
     change_content();
 	dragArea.classList.add('active');
 });
 
-//When the file leaves the drag area,the page should be restored to it's default messaging
+//Track when the file leaves the drag area,the main actions just restores the page as it originally was
 dragArea.addEventListener('dragleave', (event) => {
 	event.preventDefault();
     restore_content();
@@ -29,15 +29,15 @@ dragArea.addEventListener('dragleave', (event) => {
 //This will alter the presentation of the content in the drag area
 function change_content()
 {
-	dragText.textContent = 'Release to upload file';                        //communicate a different massage to the user
-	document.getElementById("or_header").style.display = "none";            //hide the OR message
-	visible_button.style.display = "none";                                  //hide the file select button as well
+	dragText.textContent = 'Release to upload file';               //communicate a different massage to the user
+	document.getElementById("or_header").style.display = "none";   //hide the OR message
+	visible_button.style.display = "none";                         //hide the file select button as well
 }
 
-//This will restore the contents of the drag area to the default messages
+//This will restore the contents of the drag area
 function restore_content()
 {
-	dragText.textContent = 'Drag & Drop to upload';                        
+	dragText.textContent = 'Drag & Drop to upload';
 	document.getElementById("or_header").style.display = "inline";
 	visible_button.style.display = "inline";
 }
@@ -89,7 +89,6 @@ function pre_ajax_upload()
 }
 
 //This is where the file is uploaded to the PHP backend file
-//Some error handling is also called
 function ajax_upload()
 {
 	if(fileobj != undefined)

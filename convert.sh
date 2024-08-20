@@ -1,5 +1,3 @@
-
-
 #!/bin/bash
 #
 for i in *.mp4
