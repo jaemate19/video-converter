@@ -1,32 +1,54 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Prevents default favicon requests -->
         <link rel="shortcut icon" href="#" />
         <title>Video Converter</title>
+
+        <!-- Link to external CSS for styling -->
         <link rel="stylesheet" href="styles.css" />        
     </head>
     <body>
+        <!-- Main container for centering and layout -->
         <div class="container">
+            <!-- Header message for the user -->
             <h2>Convert your MP4 file to MP3: Max File Size=10MB</h2>
+
+            <!-- Drop area for drag-and-drop file upload -->
             <div class="drag-area" ondrop="drop_file(event)">
+                
+                <!-- Label to display selected file name (initially hidden) -->
                 <span id="file_label" hidden></span>
+
+                <!-- Prompt text for drag-and-drop -->
                 <span class="header"> Drag & Drop File to upload</span> 
 
+                <!-- Separator text -->
                 <h2 id="or_header"> OR </h2>
-                
+
+                <!-- Clickable span to trigger file input -->
                 <span class="visible_button" id="visible_button">Select File</span>
 
+                <!-- Link to download the converted file (initially hidden) -->
                 <a id="download" download='' hidden> Download your file</a>
-                
-                <input type="file" name="file"  id="selectfile" onchange="file_explorer();" hidden /><br><br>
+
+                <!-- Actual file input element (hidden and triggered by the visible_button) -->
+                <input type="file" name="file" id="selectfile" onchange="file_explorer();" hidden /><br><br>
+
+                <!-- Button to start the conversion (shown after file selection) -->
                 <button class="submit_button" id="submit_button" onclick="pre_ajax_upload()" hidden>Convert</button>
+
+                <!-- Loader shown during conversion (initially hidden) -->
                 <div class="loader" id="loader" hidden> </div>
             </div>
         </div>
+
+        <!-- Link to JavaScript logic -->
         <script src="script.js"></script>   
     </body>
 </html>
+
